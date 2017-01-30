@@ -20,6 +20,9 @@ const playGame = (floor, ceiling) => {
 
   while (userGuess < floor || userGuess > ceiling || userGuess === undefined){
     getUserGuess(floor, ceiling)
+    if(userGuess === 'exit'){
+      playAgain = false
+    }
     if(userGuess<floor||userGuess>ceiling){
       console.log(`Please stay within the bounds of ${floor} and ${ceiling}`)
     }
