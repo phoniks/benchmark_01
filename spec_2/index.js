@@ -1,35 +1,36 @@
-    const letterValues = [
-      ['_', 2, 0],
-      ['A', 9, 0],
-      ['B', 2, 0],
-      ['C', 2, 0 ],
-      ['D', 4, 0],
-      ['E', 12, 0],
-      ['F',2, 0],
-      ['G',3, 0],
-      ['H',2, 0],
-      ['I',9, 0],
-      ['J',1, 0],
-      ['K',1, 0],
-      ['L',4, 0],
-      ['M',2, 0],
-      ['N',6, 0],
-      ['O',8, 0],
-      ['P',2, 0],
-      ['Q', 1, 0],
-      ['R', 6, 0],
-      ['S',4, 0],
-      ['T',6, 0],
-      ['U',4, 0],
-      ['V', 2, 0],
-      ['W',2, 0],
-      ['X',1, 0],
-      ['Y',2, 0],
-      ['Z',1, 0]
-    ]
+const letters = ['_','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O',
+'P','Q','R','S','T','U','V','W','X','Y','Z']
 
-  const letters = ['_','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O',
-                               'P','Q','R','S','T','U','V','W','X','Y','Z']
+const letterValues = [
+  ['_', 2, 0],
+  ['A', 9, 0],
+  ['B', 2, 0],
+  ['C', 2, 0 ],
+  ['D', 4, 0],
+  ['E', 12, 0],
+  ['F',2, 0],
+  ['G',3, 0],
+  ['H',2, 0],
+  ['I',9, 0],
+  ['J',1, 0],
+  ['K',1, 0],
+  ['L',4, 0],
+  ['M',2, 0],
+  ['N',6, 0],
+  ['O',8, 0],
+  ['P',2, 0],
+  ['Q', 1, 0],
+  ['R', 6, 0],
+  ['S',4, 0],
+  ['T',6, 0],
+  ['U',4, 0],
+  ['V', 2, 0],
+  ['W',2, 0],
+  ['X',1, 0],
+  ['Y',2, 0],
+  ['Z',1, 0]
+]
+
 
   const frequencies = [[],[],[],[],[],[],[],[],[],[],[],[],[]]
 
@@ -42,8 +43,8 @@
   }
 
   const calculateNewFrequency = character => {
-    const index = letters.findIndex(a => a === character)
-    let values = letterValues[index]
+    let indexOfCharacter = letters.findIndex(a => a === character)
+    let values = letterValues[indexOfCharacter]
     let previousFrequencyIndex = values[1]
     let newFrequencyIndex
     if(previousFrequencyIndex > 0){
