@@ -1,4 +1,4 @@
-const fib = require('fib')
+const fib = require('./fib')
 
 const stringToArray = (string) => {
   return string.split('').reverse()

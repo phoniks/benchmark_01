@@ -1,5 +1,5 @@
-const toFib = require('toFib')
-const toDec = require('toDec')
+const toFib = require('./toFib')
+const toDec = require('./toDec')
 
 const test  = '23'
 

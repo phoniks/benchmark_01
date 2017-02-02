@@ -1,59 +1,59 @@
-const fib = require('fib')
+const fib = require('./fib')
+const toDec = require('./toDec')
 
-const toFib = (string) => {
-  let number = parseInt(string)
-  let fibDigits = []
-  let final
-
-  if(fibDigits.length > 0){
-    console.log('if there are digits', fibDigits);
-    final = digitsToString(fibDigits)
-  }
-
-  let next = number
-
-  while( parseInt(final) < number || fibDigits[0] === undefined ){
-    let nextDigitsIndex = nextfib(next) - 1
-    fibDigits.push(nextDigitsIndex)
-    let remainder = number - fib(nextDigitsIndex)
-    next = remainder
-  }
-
-  if(final === number){
-    return final
-  }
-
-  return final
-}
+const isEmpty = array => array.length === 0
 
 const nextfib = (number) => {
   let next = 1
-  while( fib(next) < number ){
+  while( fib(next) <= number ){
     next += 1
   }
   return next
 }
 
-const isEmpty = array => array.length === 0
+const expand = (fibIndexes, number) => {
+  let fibSequence = []
+  let sequenceLength = nextfib(number)
 
-const updateValue = fibDigits => {
-  console.log(fibDigits)
-  fibDigits.forEach(digit => {
-    console.log(digit);
+  for(let i = sequenceLength - 1; i > 0; i--){
+    if(i === 1){
+      fibSequence.push('1')
+    }
+    fibSequence.push('0')
+  }
+  fibIndexes.forEach(index =>{
+    console.log(index)
+    fibSequence.splice(index, 1, '1')
   })
+
+  return fibSequence.reverse().join('').toString()
 }
 
-const digitsToString = (array) =>{
-  let value = []
+const toFib = (number) => {
+  let fibIndexes = []
+  let next = number
+  let result = expand(fibIndexes, number)
 
-  if(isEmpty(array)){
-    return 0
+  if ( toDec(result) === number){
+    return result
   }
 
-  updateValue(fibDigits)
+  let nearestLesserFib = nextfib(next) - 1
+  let remainder = next - nearestLesserFib
 
-  console.log(value.toString());
-  return value.toString()
+  while(remainder !== 0){
+    console.log(remainder);
+      fibIndexes.push(nearestLesserFib)
+      next = remainder
+  }
+
+if( remainder === 0 || fibIndexes.length > nextfib(number)){
+  return result
 }
 
+  return result
+}
+
+//console.log(expand([0,0,0,0,1], 5))
+console.log(toFib(4));
 module.exports = toFib
