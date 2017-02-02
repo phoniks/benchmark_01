@@ -48,7 +48,7 @@ const toFib = (number) => {
   }
 
 if( remainder === 0 || fibIndexes.length > nextfib(number)){
-  return result
+  return result 
 }
 
   return result
