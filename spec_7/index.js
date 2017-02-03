@@ -1,4 +1,9 @@
+const fs = require('fs')
 const sugar = require('sugar-date')
+
+let dateList = fs.readFileSync('./aThousandDates.txt', 'utf8')
+dateList = dateList.split('\n')
+
 const determineFormat = (dateInAnyFormat) =>{
   let format
   if(dateInAnyFormat.includes('-')){
@@ -20,12 +25,11 @@ const determineFormat = (dateInAnyFormat) =>{
 
 const convertDate = (date) => {
   date = date.split('')
-  console.log(date);
   let format = determineFormat(date)
   let result = []
 
   if(format === '0'){
-    return date
+    return result = date.join('')
   }
 
   if(format === '1' ){
@@ -35,11 +39,10 @@ const convertDate = (date) => {
 
     if (year.join('').toString() < 50){
       year.unshift('2', '0')
-    }
-
-    if (year.join('').toString() >= 50){
+    }else if (year.join('').toString() >= 50){
       year.unshift('1', '9')
-    }
+      }
+    
     year = year.join('')
     date.pop()
     let month = date[0].toString() + date[1].toString()
@@ -123,9 +126,11 @@ const convertDate = (date) => {
   return result.join('-')
 }
 
-const convert = (arrayOfDates, formatsArray) => {
+const convert = (arrayOfDates) => {
   let convertedArray = arrayOfDates.map(convertDate)
   return convertedArray
 }
 
 module.exports = convert
+
+console.log(convert(dateList));
