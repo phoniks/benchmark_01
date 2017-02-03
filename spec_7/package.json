@@ -1,0 +1,23 @@
+{
+  "name": "date_converter",
+  "version": "1.0.0",
+  "description": "Converts dates from a variety of formats to a ISO 8601 standard format. Spec #7 Benchmarking goal #144 Learners Guild 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoniks/benchmark_01.git"
+  },
+  "author": "John Hopkins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phoniks/benchmark_01/issues"
+  },
+  "homepage": "https://github.com/phoniks/benchmark_01#readme",
+  "dependencies": {
+    "sugar": "^2.0.4",
+    "sugar-date": "^2.0.4"
+  }
+}
