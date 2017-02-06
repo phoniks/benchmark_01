@@ -1,0 +1,15 @@
+{
+  "name": "the_guessing_game",
+  "version": "1.0.0",
+  "description": "Benchmark Spec #1 for Goal #144 Learners Guild 2017",
+  "main": "The_Guessing_Game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phoniks/benchmark_01/"
+  },
+  "author": "John Hopkins",
+  "license": "MIT"
+}
