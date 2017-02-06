@@ -1,5 +1,3 @@
-let example = "Catch me outside, how about that?"
-
 const dropEmpty = (array) => {
   console.log(array)
   let newArray = []
@@ -9,26 +7,20 @@ const dropEmpty = (array) => {
       newArray.push(currentWord)
     }
   }
-  console.log('new',newArray)
   return newArray
 }
 
 const stringIndex = (index, phrase) => {
-  let phraseAsArray = splitOnSpace(phrase)
-  console.log(phraseAsArray)
-  phraseAsArray = dropEmpty(phraseAsArray)
-  return phraseAsArray[index - 1]
+  return dropEmpty(splitOnSpace(phrase))[index - 1]
 }
 
 const splitOnSpace = (word) => {
-  const wordArray = word.split(' ')
-  const cleanedArray = wordArray.map(stripPunctuation)
-  return cleanedArray
+
+  return word.split(' ').map(stripPunctuation)
 }
 
 const stripPunctuation = (word) => {
   return word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g,"")
 }
 
-
-console.log(stringIndex(3,example))
+module.exports = stringIndex
