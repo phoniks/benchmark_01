@@ -28,4 +28,4 @@ const disemvowel = (string) => {
   return clean(vowelsDropped)
 }
 
-console.log(disemvowel('i am groot'))
+module.exports = disemvowel
