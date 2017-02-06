@@ -1,0 +1,23 @@
+{
+  "name": "wheres_the_json",
+  "version": "1.0.0",
+  "description": "returns search path for an item in json object. Spec #5 Benchmarking Goal #144 Learners Guild 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoniks/benchmark_01.git"
+  },
+  "author": "John Hopkins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phoniks/benchmark_01/issues"
+  },
+  "homepage": "https://github.com/phoniks/benchmark_01#readme",
+  "dependencies": {
+    "comment-json": "^1.1.3",
+    "fs": "0.0.1-security"
+  }
+}
