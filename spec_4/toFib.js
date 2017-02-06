@@ -22,7 +22,6 @@ const expand = (fibIndexes, number) => {
     fibSequence.push('0')
   }
   fibIndexes.forEach(index =>{
-    console.log(index)
     fibSequence.splice(index, 1, '1')
   })
 
@@ -41,19 +40,17 @@ const toFib = (number) => {
   let nearestLesserFib = nextfib(next) - 1
   let remainder = next - nearestLesserFib
 
-  while(remainder !== 0){
-    console.log(remainder);
+  while(remainder !== 0){x
       fibIndexes.push(nearestLesserFib)
       next = remainder
   }
 
 if( remainder === 0 || fibIndexes.length > nextfib(number)){
-  return result 
+  return result
 }
 
   return result
 }
 
-//console.log(expand([0,0,0,0,1], 5))
-console.log(toFib(4));
+
 module.exports = toFib

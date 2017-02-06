@@ -15,4 +15,5 @@ const convert = (string) => {
   }else return toDec(string)
 }
 
+
 module.exports = convert
